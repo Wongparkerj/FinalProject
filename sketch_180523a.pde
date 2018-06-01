@@ -1,32 +1,73 @@
-int x = 0;
-int y = 0;
-int speed = 20;
-
+int x = 200;
+int y = 300;
+boolean up = false;
+boolean down = false; 
+boolean left = false;
+boolean right = false;
+PImage image;
 void setup() {
-  size(1000, 1000);
-  
+  size(1000, 800);
+  image = loadImage("snake.jpg");
+  image.resize(1000, 800);
 }
 
 void draw() {
-  background(6, 89, 122);
+  background(0);
+  Apple.display();
+  image(image, 0, 0);
   display();
-}
-
-void keyPressed() {
   if (key == CODED) {
     if (keyCode == UP) {
-      y -= 30 + speed;
+      up = true;
+      down = false;
+      left = false;
+      right = false;
     } else if (keyCode == DOWN) {
-      y += 30 + speed;
+      down = true;
+      up = false;
+      left = false;
+      right = false;
     } else if (keyCode == LEFT) {
-      x -= 30 + speed;
+      left = true;
+      right = false;
+      up = false;
+      down = false;
     } else if (keyCode == RIGHT) {
-      x += 30 + speed;
-}
+      right = true;
+      left = false; 
+      up = false;
+      down = false;
+    }
   }
+  if (up == true) {
+    y -= 5;
+  }
+  if (down == true) {
+    y += 5;
+  }
+  if (left == true) {
+    x -= 5;
+  }
+  if (right == true){
+    x += 5;
+  }
+  if( x <= -60) {
+    x = 1000;
+  }
+  if (x >= 1001) {
+    x = -50;
+  }
+  if (y <= -60) {
+    y = 799;
+  }
+  if (y >= 800) {
+    y = -50;
+  }
+  
+  
 }
 void display() {
   fill(8, 163, 33);
   rect(x, y, 50, 50);
- }
+}
  
