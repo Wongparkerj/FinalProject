@@ -1,5 +1,5 @@
 # FinalProject
-One Paragraph of project description goes here
+The final project was supposed to be snake. As you go over the food, you increase in size and you have to avoid being killed by running into yourself. 
 
 ### Difficulties or opportunities you encountered along the way.
 
