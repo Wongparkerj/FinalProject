@@ -4,7 +4,9 @@ boolean up = false;
 boolean down = false; 
 boolean left = false;
 boolean right = false;
+boolean d = true;
 PImage image;
+Apple a = new Apple();
 void setup() {
   size(1000, 800);
   image = loadImage("snake.jpg");
@@ -13,7 +15,6 @@ void setup() {
 
 void draw() {
   background(0);
-  Apple.display();
   image(image, 0, 0);
   display();
   if (key == CODED) {
@@ -64,10 +65,9 @@ void draw() {
     y = -50;
   }
   
-  
 }
 void display() {
+  a.display();
   fill(8, 163, 33);
   rect(x, y, 50, 50);
 }
- 
