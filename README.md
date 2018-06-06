@@ -3,38 +3,43 @@ One Paragraph of project description goes here
 
 ### Difficulties or opportunities you encountered along the way.
 
-The toughest part was...
+The toughest part was trying to get the snake to increase in size. It never worked.
 
 ### Most interesting piece of your code and explanation for what it does.
 
 ```Java
-void keyPressed() {
-  if (keyCode == LEFT) {
-    tree= tree.getLeft();
-    System.out.println(tree.getValue());
-    String s=(String)tree.getValue();
-    fill(155);
-    textSize(50);
-  } else if (keyCode == RIGHT) {
-    tree = tree.getRight();
-    System.out.println(tree.getValue());
-    String s=(String)tree.getValue();
-    fill(155);
-    textSize(50);
-  } else if (tree.getLeft()==null&&tree.getRight()==null) {
-    System.out.println(tree.getValue());
-    tree=t.returnTree();
+ if (key == CODED) {
+    if (keyCode == UP) {
+      up = true;
+      down = false;
+      left = false;
+      right = false;
+    } else if (keyCode == DOWN) {
+      down = true;
+      up = false;
+      left = false;
+      right = false;
+    } else if (keyCode == LEFT) {
+      left = true;
+      right = false;
+      up = false;
+      down = false;
+    } else if (keyCode == RIGHT) {
+      right = true;
+      left = false; 
+      up = false;
+      down = false;
+    }
   }
-}
 ```
-This is the code that moves down the tree as decisions are made.  It gets each value from both left and right and also casts the value to a String.  If the progressions arrives at the leaf nodes, those values are printed.
+This is the code that makes the "snake" move with the arrow keys. I like how it's controlled by the user and makes for a decent pre-alpha project.
 ## Built With
 
 * [Processing](https://processing.org/) - The IDE used
 
 ## Authors
 
-* **Billie Thompson** 
+* Jett Wong-Parker
 
 
 ## Acknowledgments
