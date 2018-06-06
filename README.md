@@ -44,6 +44,6 @@ This is the code that makes the "snake" move with the arrow keys. I like how it'
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Chris Bartz
+
+
